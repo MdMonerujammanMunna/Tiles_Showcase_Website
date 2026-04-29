@@ -13,7 +13,7 @@ const NavBarPage = () => {
     </>
     return (
         <div>
-            <nav className="sticky top-0 z-40 w-full bg-background/70 backdrop-blur-lg">
+            <nav className="sticky top-0 z-40 w-full text-white backdrop-blur-lg bg-[var(--main-color)]">
                 <header className="mx-auto flex h-16 items-center justify-between px-6">
                     {/* Menu bar icon start */}
                     <div className="flex items-center gap-4">
@@ -49,7 +49,7 @@ const NavBarPage = () => {
 
                         {/* Navbar Logo start */}
                         <Link href="/" className="flex items-center gap-3">
-                            <p className="font-bold">Tails Gallary</p>
+                            <p className="font-black">Tails <span className='text-[var(--second-color)]'>Gallary</span></p>
                         </Link>
                         {/* Navbar Logo end */}
 
@@ -63,7 +63,7 @@ const NavBarPage = () => {
                     {/* Main link section end */}
 
                     {/* Log-in button start */}
-                    <Button className=" items-center gap-4 flex">
+                    <Button className=" items-center gap-4 flex bg-[var(--second-color)] font-bold">
                         <Link href="/Login">Login</Link>
                     </Button>
                     {/* Log-in button end */}
