@@ -12,8 +12,8 @@ const NavBarPage = () => {
         <li><Link href="/Profile">My Profile</Link></li>
     </>
     return (
-        <div>
-            <nav className="sticky top-0 z-40 w-full text-white backdrop-blur-lg bg-[var(--main-color)]">
+        <>
+            <nav className="sticky top-0 z-40 border-b-4 border-white w-full text-white backdrop-blur-lg bg-[var(--main-color)]">
                 <header className="mx-auto flex h-16 items-center justify-between px-6">
                     {/* Menu bar icon start */}
                     <div className="flex items-center gap-4">
@@ -79,7 +79,7 @@ const NavBarPage = () => {
                 )}
                 {/* Manu bar Link section end */}
             </nav>
-        </div>
+        </>
     );
 };
 
