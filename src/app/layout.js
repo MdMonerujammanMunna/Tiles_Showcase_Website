@@ -1,7 +1,5 @@
 import { Geist, Geist_Mono, Nunito } from "next/font/google";
 import "./globals.css";
-import NavBarPage from "./Component/NavBar/page";
-import Footersection from "./Component/Footer/page";
 
 const NunitoFont = Nunito({
   variable: "--font-Nunito-Font",
@@ -21,9 +19,7 @@ export default function RootLayout({ children }) {
       className={`container mx-auto antialiased`}
     >
       <body className={`min-h-full flex flex-col ${NunitoFont.className} `}>
-        <NavBarPage></NavBarPage>
         <main> {children} </main>
-        <Footersection></Footersection>
       </body>
     </html >
   );

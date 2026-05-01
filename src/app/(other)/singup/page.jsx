@@ -1,11 +1,11 @@
 import React from 'react';
 
-const All_Tiles = () => {
+const SignUP = () => {
     return (
         <div>
-            All tiels
+            sing Up
         </div>
     );
 };
 
-export default All_Tiles;
+export default SignUP;
