@@ -10,8 +10,11 @@ import {
     Label,
     TextField,
 } from "@heroui/react";
+import { useRouter } from "next/navigation";
+import { FcGoogle } from "react-icons/fc";
 import { toast } from "react-toastify";
 const SignUP = () => {
+    const router = useRouter();
     const onSubmit = async (e) => {
         e.preventDefault();
         const fromdata = new FormData(e.currentTarget)
@@ -21,7 +24,7 @@ const SignUP = () => {
             email: UserData.email,
             password: UserData.password,
             image: UserData.image,
-            callbackURL: "/",
+            dontLogin: true
         });
         if (data) {
             toast.success('Thank you for signing up', {
@@ -34,6 +37,7 @@ const SignUP = () => {
                 progress: undefined,
                 theme: "dark",
             });
+            router.push('/Login');
         }
         if (error) {
             toast.error(`${error.message}`, {
@@ -48,6 +52,23 @@ const SignUP = () => {
             });
         }
     };
+    const GoogleSubmit = async () => {
+        const data = await authClient.signIn.social({
+            provider: "google",
+        });
+        if (data) {
+            toast.success('Thank you for signing up', {
+                position: "top-center",
+                autoClose: 5000,
+                hideProgressBar: false,
+                closeOnClick: false,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                theme: "dark",
+            });
+        }
+    }
     return (
         <>
             <div className="bg-[var(--main-color)]   py-20">
@@ -118,6 +139,12 @@ const SignUP = () => {
                             <Button type="reset" variant="secondary">
                                 Reset
                             </Button>
+                        </div>
+                        <div className="flex items-center justify-center">
+                            <p className="text-black font-bold text-center">OR</p>
+                        </div>
+                        <div className="text-black">
+                            <Button onClick={GoogleSubmit} className="w-full" variant="outline">   <FcGoogle /> Sign in with Google</Button>
                         </div>
                     </Form>
                 </Card>

@@ -1,5 +1,5 @@
 "use client";
-
+import { FcGoogle } from "react-icons/fc";
 import { authClient } from "@/lib/auth-client";
 import { Button, Description, FieldError, Form, Input, Label, TextField } from "@heroui/react";
 import Link from "next/link";
@@ -40,6 +40,12 @@ const LoginPage = () => {
             });
         }
     };
+
+    const GoogleSubmit = async () => {
+        const data = await authClient.signIn.social({
+            provider: "google",
+        });
+    }
     return (
         <div className="min-h-screen flex items-center justify-center bg-[var(--main-color)] text-white px-4">
             <Form className="flex  flex-col gap-4 bg-white w-full max-w-md p-8 rounded-2xl shadow-lg" onSubmit={onSubmit}>
@@ -99,6 +105,12 @@ const LoginPage = () => {
                         Sign up
                     </Link>
                 </p>
+                <div className="flex items-center justify-center">
+                    <p className="text-black font-bold text-center">OR</p>
+                </div>
+                <div className="text-black">
+                    <Button onClick={GoogleSubmit} className="w-full" variant="outline">   <FcGoogle /> Sign in with Google</Button>
+                </div>
             </Form>
         </div>
     );
