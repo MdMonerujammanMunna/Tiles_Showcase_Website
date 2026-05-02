@@ -9,7 +9,8 @@ const CardUI = ({ HeroData }) => {
             <Card className="">
                 <Card.Header>
                     <div className="relative w-full aspect-square">
-                        <Image src={image} fill alt='No  fount' className='object-cover rounded-2xl'></Image>
+                        <Image src={image} fill sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                            alt='No  fount' className='object-cover rounded-2xl'></Image>
                     </div>
 
                     <Card.Title className='font-bold text-2xl my-4'>{title} ({category})</Card.Title>

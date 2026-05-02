@@ -1,16 +1,21 @@
 "use client"
-import { Button } from '@heroui/react';
+import { signOut, useSession } from '@/lib/auth-client';
+import { Avatar, Button } from '@heroui/react';
 import Link from 'next/link';
 import { useState } from 'react';
 
 const NavBarPage = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     const button = <>
-
         <li><Link href="/">Home</Link></li>
         <li><Link href="/All_tiles">All Tiles</Link></li>
         <li><Link href="/Profile">My Profile</Link></li>
     </>
+    const { data, isPending } = useSession()
+    if (isPending) {
+        <h2>Loading...</h2>
+    }
+    const user = data?.user;
     return (
         <>
             <nav className="sticky top-0 z-40 border-b-4 border-white w-full text-white backdrop-blur-lg bg-[var(--main-color)]">
@@ -61,17 +66,33 @@ const NavBarPage = () => {
                         {button}
                     </ul>
                     {/* Main link section end */}
-
-                    {/* Log-in button start */}
-                    <div className="flex gap-4 items-center">
-                        <Button className=" items-center gap-4 flex bg-[var(--second-color)] font-bold">
-                            <Link href="/Login">Login</Link>
-                        </Button>
-                        <Button className=" items-center gap-4 flex bg-[var(--second-color)] font-bold">
-                            <Link href="/SignUP">Sign UP</Link>
-                        </Button>
-                    </div>
-                    {/* Log-in button end */}
+                    {
+                        user ?
+                            <>
+                                <div className="flex gap-4 items-center">
+                                    <Link href="/Profile">
+                                        <Avatar>
+                                            <Avatar.Image alt={user.name} src={user.image} referrerPolicy='no-referrer' />
+                                            <Avatar.Fallback>{user.name.charAt(0)}</Avatar.Fallback>
+                                        </Avatar>
+                                    </Link>
+                                    <Button onClick={() => signOut()} className=" items-center gap-4 flex bg-[var(--second-color)] font-bold">
+                                        Log-out
+                                    </Button>
+                                </div>
+                            </>
+                            :
+                            <>
+                                <div className="flex gap-4 items-center">
+                                    <Button className=" items-center gap-4 flex bg-[var(--second-color)] font-bold">
+                                        <Link href="/Login">Login</Link>
+                                    </Button>
+                                    <Button className=" items-center gap-4 flex bg-[var(--second-color)] font-bold">
+                                        <Link href="/SignUP">Sign UP</Link>
+                                    </Button>
+                                </div>
+                            </>
+                    }
                 </header>
 
                 {/* Manu bar Link section start  */}
