@@ -3,13 +3,14 @@ import { signOut, useSession } from '@/lib/auth-client';
 import { Avatar, Button } from '@heroui/react';
 import Link from 'next/link';
 import { useState } from 'react';
+import NavLink from '../NavLink/NavLink';
 
 const NavBarPage = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     const button = <>
-        <li><Link href="/">Home</Link></li>
-        <li><Link href="/All_tiles">All Tiles</Link></li>
-        <li><Link href="/Profile">My Profile</Link></li>
+        <li><NavLink href="/">Home</NavLink></li>
+        <li><NavLink href="/All_tiles">All Tiles</NavLink></li>
+        <li><NavLink href="/Profile">My Profile</NavLink></li>
     </>
     const { data, isPending } = useSession()
     if (isPending) {
