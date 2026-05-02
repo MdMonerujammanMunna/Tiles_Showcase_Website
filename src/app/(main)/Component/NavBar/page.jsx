@@ -63,9 +63,14 @@ const NavBarPage = () => {
                     {/* Main link section end */}
 
                     {/* Log-in button start */}
-                    <Button className=" items-center gap-4 flex bg-[var(--second-color)] font-bold">
-                        <Link href="/Login">Login</Link>
-                    </Button>
+                    <div className="flex gap-4 items-center">
+                        <Button className=" items-center gap-4 flex bg-[var(--second-color)] font-bold">
+                            <Link href="/Login">Login</Link>
+                        </Button>
+                        <Button className=" items-center gap-4 flex bg-[var(--second-color)] font-bold">
+                            <Link href="/SignUP">Sign UP</Link>
+                        </Button>
+                    </div>
                     {/* Log-in button end */}
                 </header>
 

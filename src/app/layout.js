@@ -1,5 +1,6 @@
 import { Geist, Geist_Mono, Nunito } from "next/font/google";
 import "./globals.css";
+import { ToastContainer } from "react-toastify";
 
 const NunitoFont = Nunito({
   variable: "--font-Nunito-Font",
@@ -19,6 +20,7 @@ export default function RootLayout({ children }) {
       className={`container mx-auto antialiased`}
     >
       <body className={`min-h-full flex flex-col ${NunitoFont.className} `}>
+        <ToastContainer />
         <main> {children} </main>
       </body>
     </html >

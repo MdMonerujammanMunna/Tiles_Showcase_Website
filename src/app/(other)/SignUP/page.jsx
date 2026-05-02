@@ -1,4 +1,5 @@
 "use client";
+import { authClient } from "@/lib/auth-client";
 import {
     Button,
     Card,
@@ -9,17 +10,51 @@ import {
     Label,
     TextField,
 } from "@heroui/react";
+import { toast } from "react-toastify";
 const SignUP = () => {
     const onSubmit = async (e) => {
         e.preventDefault();
+        const fromdata = new FormData(e.currentTarget)
+        const UserData = Object.fromEntries(fromdata.entries())
+        const { data, error } = await authClient.signUp.email({
+            name: UserData.name,
+            email: UserData.email,
+            password: UserData.password,
+            image: UserData.image,
+            callbackURL: "/",
+        });
+        if (data) {
+            toast.success('Thank you for signing up', {
+                position: "top-center",
+                autoClose: 5000,
+                hideProgressBar: false,
+                closeOnClick: false,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                theme: "dark",
+            });
+        }
+        if (error) {
+            toast.error(`${error.message}`, {
+                position: "top-center",
+                autoClose: 5000,
+                hideProgressBar: false,
+                closeOnClick: false,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                theme: "dark",
+            });
+        }
     };
     return (
         <>
-            <div className="bg-[var(--main-color)]  py-20">
-                <Card className="border mx-auto w-125 mt-5 py-10">
+            <div className="bg-[var(--main-color)]   py-20">
+                <Card className="border mx-auto max-w-md py-10">
                     <h1 className="text-3xl font-bold text-center text-gray-800">Sign Up</h1>
 
-                    <Form className="flex w-96 mx-auto flex-col gap-4" onSubmit={onSubmit}>
+                    <Form className="flex max-w-md mx-auto flex-col gap-4" onSubmit={onSubmit}>
                         <TextField isRequired name="name" type="text">
                             <Label>Name</Label>
                             <Input placeholder="Enter your name" />

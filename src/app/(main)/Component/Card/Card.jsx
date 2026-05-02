@@ -17,7 +17,6 @@ const CardUI = ({ HeroData }) => {
 
                     <div className="mt-4 flex items-center justify-between">
                         <div className=" flex items-center gap-2">
-                            <p className=' font-semibold'>Tags:-</p>
                             {tags.map((tag, index) => <h1 key={index}> <Button className="font-bold" variant="tertiary">{tag}</Button></h1>
                             )}
                         </div>

@@ -1,17 +1,44 @@
 "use client";
 
+import { authClient } from "@/lib/auth-client";
 import { Button, Description, FieldError, Form, Input, Label, TextField } from "@heroui/react";
 import Link from "next/link";
+import { toast } from "react-toastify";
 const LoginPage = () => {
-    const onSubmit = (e) => {
+    const onSubmit = async (e) => {
         e.preventDefault();
-        // const formData = new FormData(e.currentTarget);
-        const data = {};
-        // Convert FormData to plain object
-        formData.forEach((value, key) => {
-            data[key] = value.toString();
+        const fromdata = new FormData(e.currentTarget)
+        const UserData = Object.fromEntries(fromdata.entries())
+        const { data, error } = await authClient.signIn.email({
+            email: UserData.email,
+            password: UserData.password,
+            rememberMe: true,
+            callbackURL: "/",
         });
-        alert(`Form submitted with: ${JSON.stringify(data, null, 2)}`);
+        if (data) {
+            toast.success('Thank you for Log in', {
+                position: "top-center",
+                autoClose: 2000,
+                hideProgressBar: false,
+                closeOnClick: false,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                theme: "dark",
+            });
+        }
+        if (error) {
+            toast.error(`${error.message}`, {
+                position: "top-center",
+                autoClose: 2000,
+                hideProgressBar: false,
+                closeOnClick: false,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                theme: "dark",
+            });
+        }
     };
     return (
         <div className="min-h-screen flex items-center justify-center bg-[var(--main-color)] text-white px-4">
