@@ -3,7 +3,7 @@ import Image from 'next/image';
 import React from 'react';
 
 const DetailsUI = ({ Singledata }) => {
-    const { title, description, image, category, price, currency, dimensions, material, inStock } = Singledata
+    const { title, description, image, category, price, currency, dimensions, material, tags, inStock } = Singledata
     return (
         <>
             <div className="bg-[var(--main-color)] flex flex-col lg:flex-row items-center gap-20 justify-center px-10 py-20">
@@ -26,6 +26,13 @@ const DetailsUI = ({ Singledata }) => {
                         <div className="flex items-center gap-4 text-[18px] ">
                             <p className='font-bold'>Category :</p>
                             <span className='font-semibold'>{category}</span>
+                        </div>
+                    </div>
+                    <div className="mt-4 flex items-center justify-between text-black">
+                        <div className=" flex items-center gap-2">
+                            <span className='text-white font-bold text-[18px]'>Tags:- </span>
+                            {tags.map((tag, index) => <h1 key={index}> <Button className="font-bold" variant="tertiary">{tag}</Button></h1>
+                            )}
                         </div>
                     </div>
                     <div className="mt-10 flex items-center gap-10">
