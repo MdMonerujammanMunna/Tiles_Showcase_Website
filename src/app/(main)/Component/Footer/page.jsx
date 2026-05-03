@@ -32,7 +32,7 @@ const Footersection = () => {
                         </ul>
                     </div>
                     <div className="">
-                        <p className='font-bold text-2xl mb-4'>Information</p>
+                        <p className='font-bold text-2xl mb-4'>Contact Us</p>
                         <ul className=' font-semibold'>
                             {Info}
                         </ul>
