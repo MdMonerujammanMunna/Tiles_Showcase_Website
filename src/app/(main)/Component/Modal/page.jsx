@@ -1,3 +1,4 @@
+'use client';
 import { authClient } from "@/lib/auth-client";
 import { Button, Input, Label, Modal, Surface, TextField } from "@heroui/react";
 import { BiUserCircle } from "react-icons/bi";
@@ -7,7 +8,7 @@ const ModalPage = () => {
         const name = e.target.name.value
         const image = e.target.image.value
         await authClient.updateUser({
-            name,image
+            name, image
         })
 
     }
