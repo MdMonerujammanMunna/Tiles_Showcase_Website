@@ -2,6 +2,10 @@ import React from 'react';
 import CardUI from '../Component/Card/Card';
 import { Description, Label, SearchField } from '@heroui/react';
 import SearchBars from '../Component/SearchBar/SearchBar';
+export const metadata = {
+    title: "All Tiles ",
+    description: "See All Tiles Your need",
+};
 
 const All_Tiles = async ({ searchParams }) => {
     const { SearchBar } = await searchParams;

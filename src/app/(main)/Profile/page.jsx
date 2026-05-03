@@ -4,6 +4,10 @@ import { useSession } from '@/lib/auth-client';
 import { Avatar, Button, Card } from '@heroui/react';
 import ModalPage from '../Component/Modal/page';
 
+export const metadata = {
+    title: "Profile ",
+    description: "Profile",
+};
 const Profile = () => {
     const { data, isPending } = useSession()
     const user = data?.user;

@@ -1,36 +1,88 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# 🌟 "Tiles-Gallary" Showcase Website
 
-## Getting Started
+**I**s a modern and Simple website, where you can easily view , find  and choose from a variety of tiles designs, colors, and textures.This websites make it easier customers to make decisions, as they can compare different styles from the comfort of their homes.
 
-First, run the development server:
+🚀 Live Demo:[Click here](https://tiles-showcase-website.vercel.app)
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+🎯 **Purpose**
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+The purpose of this project is to create a simple and responsive Tiles Gallery website where users can view different tile designs in a clean and organized layout.
+This project demonstrates basic frontend skills such as 📱 responsive design and 🖼️ tile image display. It also shows detailed information about each tile, including 📏 size, 🏷️ tags, 📂 category, 💰 price, and other relevant details. Users can easily 🔍 search and find any tile quickly.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+---
 
-## Learn More
+## ✨ Key Features
 
-To learn more about Next.js, take a look at the following resources:
+- 🖼️ **High-Quality Images**
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+    View clear, high-resolution images with zoom options for better detail.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+- 🔍 **Advanced Search**
+    Quickly find tiles by filtering  search.
 
-## Deploy on Vercel
+- 📄 **Detailed Product Info**
+    Get complete information including specifications and pricing.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- 📱 **Responsive Design**
+    Fully optimized for mobile, tablet, and desktop devices.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- 🧭 **Easy Navigation & Clean UI**
+    Smooth and user-friendly interface for a better browsing experience.
+
+- 👤 **User Profile**
+    View and manage personal info, update name & profile picture,
+
+- 📌 **Footer Section**
+    Includes contact info, social media links, and quick navigation links.
+
+- 🔐 **Authentication System**
+    Secure login and signup using Better Auth with Google Sign-In support.
+
+- 🗄️ **MongoDB Database**
+    MongoDB used for securely storing user data and application information.
+
+- 📢 **Announcements (Marquee Effect)**
+    Used marquee to display scrolling announcements and important updates.
+
+- 🚪 **Logout Feature**
+    Users can securely log out from their account anytime.
+
+- 🔒 **Protected Pages**
+    Profile and details pages are accessible only after login.
+
+---
+
+## 🛠️ Technologies Used
+
+* Next.js
+
+* React.js
+
+* Tailwind CSS
+
+* HeroUI
+
+* React Icons
+
+* React Toastify
+
+* JsonDB
+
+* Render(Fake Server Create)
+
+* Better Auth
+
+* MongoDB
+
+* Animate.CSS
+
+* React Fast Marquee
+
+* vercel (Deployment)
+
+
+## 💡 Final Note
+
+This project is made for practice and learning purposes. 
+Any feedback or suggestions are always welcome to improve it further.(Md.Munna❤️)

@@ -2,6 +2,10 @@ import { Button } from '@heroui/react';
 import Image from 'next/image';
 import React from 'react';
 
+export const metadata = {
+    title: "Details",
+    description: "Details",
+};
 const DetailsUI = ({ Singledata }) => {
     const { title, description, image, category, price, currency, dimensions, material, tags, inStock } = Singledata
     return (

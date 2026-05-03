@@ -13,6 +13,11 @@ import {
 import { useRouter } from "next/navigation";
 import { FcGoogle } from "react-icons/fc";
 import { toast } from "react-toastify";
+
+export const metadata = {
+    title: "Sign UP",
+    description: "Sign UP",
+};
 const SignUP = () => {
     const router = useRouter();
     const onSubmit = async (e) => {
