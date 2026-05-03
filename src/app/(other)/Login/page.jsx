@@ -5,11 +5,6 @@ import { Button, Description, FieldError, Form, Input, Label, TextField } from "
 import Link from "next/link";
 import { toast } from "react-toastify";
 
-
-export const metadata = {
-    title: "Log In",
-    description: "Log In",
-};
 const LoginPage = () => {
     const onSubmit = async (e) => {
         e.preventDefault();
